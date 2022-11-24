@@ -1,0 +1,48 @@
+header img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+nav{
+    float: left;
+    background-color: white;
+    width: 20%;
+    height: 200px;
+}
+
+section{
+    float: right;
+    background-color: maroon;
+    width: 80%;
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box; /* het ellement mag maar 80 breed zijn*/
+}
+body{
+    background-color: silver;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+footer{
+
+    clear: both;
+    height: 120px;
+    background-color: lawngreen;
+
+
+}
+
+span{
+    background-color: green;
+}
+
+#wrapper {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
