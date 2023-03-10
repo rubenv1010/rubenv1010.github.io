@@ -1,34 +1,33 @@
 const setup = () => {
-    console.log ("setup");
-    let btnHerbereken = document.getElementsByClassName('btnHerbereken')[0].addEventListener("click", calc);
+    console.log("setup");
+    // let btnHerbereken = document.getElementsByClassName('btnHerbereken')[0];
+    // btnHerbereken.addEventListener("click", calc);
+    // btnHerbereken.style.display = "none";
 
-
-
+    let txtAantallen = document.getElementsByClassName('aantal');
+    for (let i = 0; i < txtAantallen.length; i++) {
+        txtAantallen[i].addEventListener("change", calc);
+    }
 };
 
 const calc = () => {
-
     let txtBtws = document.getElementsByClassName('btw');
     let txtAantallen = document.getElementsByClassName('aantal');
     let txtPrijzen = document.getElementsByClassName('prijs');
     let txtSubtotalen = document.getElementsByClassName('subtotaal');
-    let txtTotaal=document.getElementsByClassName('totaal')[0];
+    let txtTotaal = document.getElementsByClassName('totaal')[0];
     let totaal = 0;
+
     for (let i = 0; i < txtBtws.length; i++) {
-        let aantal=parseFloat(txtAantallen[i].value, 10);
-		console.log (txtBtws[i].innerHTML);
-		console.log (txtBtws[i].textContent);
-        let btw=parseFloat(txtBtws[i].innerHTML, 10);
-        let prijs=parseFloat(txtPrijzen[i].innerHTML, 10);
-        let subtotaal=aantal*prijs*(1+(btw/100));
-        totaal+=subtotaal;
+        let aantal = parseFloat(txtAantallen[i].value.replace(',', '.'));
+        let btw = parseFloat(txtBtws[i].innerHTML.replace(',', '.'));
+        let prijs = parseFloat(txtPrijzen[i].innerHTML.replace(',', '.'));
+        let subtotaal = aantal * prijs * (1 + (btw / 100));
+        totaal += subtotaal;
 
-        txtSubtotalen[i].textContent=subtotaal.toFixed(2)+" Eur";
-
-
+        txtSubtotalen[i].textContent = subtotaal.toFixed(2).replace('.', ',') + " Eur";
     }
-    txtTotaal.textContent=totaal.toFixed(2)+" Eur";
+    txtTotaal.textContent = totaal.toFixed(2).replace('.', ',') + " Eur";
 };
 
 window.addEventListener("load", setup);
-
