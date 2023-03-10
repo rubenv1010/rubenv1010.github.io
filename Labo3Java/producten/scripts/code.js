@@ -1,13 +1,12 @@
 const setup = () => {
     console.log ("setup");
-    let btnHerbereken = document.getElementsByClassName('btnHerbereken')[0];
-    btnHerbereken.addEventListener("click", update);
+    let btnHerbereken = document.getElementsByClassName('btnHerbereken')[0].addEventListener("click", calc);
 
-    // vul de UI een eerste keer in
-    update();
+
+
 };
 
-const update = () => {
+const calc = () => {
 
     let txtBtws = document.getElementsByClassName('btw');
     let txtAantallen = document.getElementsByClassName('aantal');
@@ -23,7 +22,6 @@ const update = () => {
         let prijs=parseFloat(txtPrijzen[i].innerHTML, 10);
         let subtotaal=aantal*prijs*(1+(btw/100));
         totaal+=subtotaal;
-
 
         txtSubtotalen[i].textContent=subtotaal.toFixed(2)+" Eur";
 
