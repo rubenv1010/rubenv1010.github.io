@@ -1,16 +1,4 @@
-const Create = () => {
-    let para = document.createElement("p");
-    let t = document
-        .createTextNode("This is a paragraph.");
-    para.appendChild(t);
-    document.getElementById("myDIV")
-        .appendChild(para);
-};
-
 const setup = () => {
-    document.getElementById("btnCreate")
-        .addEventListener("click",Create);
-
+    document.querySelectorAll("p")[0].innerHTML = "Good Job!";
 };
-
 window.addEventListener("load", setup);
