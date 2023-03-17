@@ -3,12 +3,13 @@ const setup = () => {
 
     let items = document.getElementsByTagName('li');
     for (var i = 0; i < items.length; i++) {
-        items[i].className = 'listitem';
+       // items[i].className = 'listitem';
+        items[i].setAttribute("class","listitem")
     }
 
-    let myPic = document.createElement('img');
-    myPic.setAttribute ("src", 'http://gotocon.com/dl/jaoo_aus2008/photos/speakers/Pamela_Fox.jpg');
+    let foto = document.createElement('img');
+    foto.setAttribute ("src", 'download.jpg');
 
-    document.querySelector("body").appendChild(myPic);
+    document.querySelector("body").appendChild(foto);
 };
 window.addEventListener("load", setup);
